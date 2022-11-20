@@ -29,7 +29,7 @@ def init_db():
     cursor.execute(create_table)
 
     # Opening the fortune.csv file
-    file = open("fortune.csv")
+    file = open("fortune.csv", encoding="utf-8")
 
     # Reading the contents of the
     # person-records.csv file
