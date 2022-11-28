@@ -9,9 +9,9 @@ lint:
 	pylint --disable=R,C *.py
 
 deploy:
-	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 561744971673.dkr.ecr.us-east-1.amazonaws.com
-	docker build -t deploy-fastapi .
-	docker tag deploy-fastapi:latest 561744971673.dkr.ecr.us-east-1.amazonaws.com/deploy-fastapi:latest
-	docker push 561744971673.dkr.ecr.us-east-1.amazonaws.com/deploy-fastapi:latest
+	aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/i6h0i6s9
+	docker build -t zheng-zhang .
+	docker tag zheng-zhang:latest public.ecr.aws/i6h0i6s9/zheng-zhang:latest
+	docker push public.ecr.aws/i6h0i6s9/zheng-zhang:latest
 
 all: install format lint deploy
