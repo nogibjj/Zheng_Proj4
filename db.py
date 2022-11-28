@@ -1,6 +1,7 @@
 import sqlite3
 import csv
 
+
 def init_db():
     # Connecting to the database
     connection = sqlite3.connect("fortune.db")

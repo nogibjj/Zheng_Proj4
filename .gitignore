@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+aws/*
 build/
 develop-eggs/
 dist/

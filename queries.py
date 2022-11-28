@@ -9,10 +9,12 @@ connection = sqlite3.connect("fortune.db")
 # SQL queries on a database table
 cursor = connection.cursor()
 
+
 def parse_to_json(df):
     result = df.to_json(orient="records")
     parsed = json.loads(result)
-    return json.dumps(parsed, indent=4)  
+    return json.dumps(parsed, indent=4)
+
 
 def searchAll():
     # get all the data from database
@@ -67,7 +69,7 @@ def searchCountriesByNumberOfTop100Companies():
     # storing the data in a variable using fetchall() method
     alldata = cursor.fetchall()  # a list of tuples
     df = pd.DataFrame(alldata)
-    result = parse_to_json(df) 
+    result = parse_to_json(df)
     return result
 
 
