@@ -18,5 +18,8 @@ jobs:
     - name: Format code
       run: |
         make format
+    - name: Deploy to AWS ECR
+      run: |
+        make deploy
     
     
